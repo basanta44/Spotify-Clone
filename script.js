@@ -100,7 +100,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
   let a = await fetch(
-    'songs/'
+    'Spotify-Clone/songs/'
   );
   let response = await a.text();
   let div = document.createElement('div');
@@ -113,7 +113,7 @@ async function displayAlbums() {
     if (e.href.includes('/songs/')) {
       let folder = e.href.split('/').slice(-1)[0];
       let a = await fetch(
-        `songs/${folder}/info.json`
+        `Spotify-Clone/songs/${folder}/info.json`
       );
       let response = await a.json();
       let cardContainer = document.querySelector('.cardContainer');
@@ -132,7 +132,7 @@ async function displayAlbums() {
 }
 
 async function main() {
-  await getSongs('songs/Recovery');
+  await getSongs('Spotify-Clone/songs/Recovery');
 
   await displayAlbums();
 

@@ -100,7 +100,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
   let a = await fetch(
-    'https://spotify-clone-fawn-mu.vercel.app/songs/'
+    'https://spotify-clone-bay-iota.vercel.app/songs/'
   );
   let response = await a.text();
   let div = document.createElement('div');

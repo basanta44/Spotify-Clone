@@ -113,7 +113,7 @@ async function displayAlbums() {
     if (e.href.includes('/songs/')) {
       let folder = e.href.split('/').slice(-1)[0];
       let a = await fetch(
-        `/songs/${folder}/info.json`
+        `https://spotify-clone-bay-iota.vercel.app/songs/${folder}/info.json`
       );
       let response = await a.json();
       let cardContainer = document.querySelector('.cardContainer');

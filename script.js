@@ -19,7 +19,7 @@ const formatSeconds = (seconds) => {
 async function getSongs(folder) {
   currFolder = folder;
   let a = await fetch(
-    `https://spotify-clone-fawn-mu.vercel.app/${folder}/`
+    `https://vercel.com/basanta44s-projects/spotify-clone/6vDC2j5rtKQL7HXgDCpL539VoDrK/${folder}/`
   );
   let response = await a.text();
   let div = document.createElement('div');

@@ -84,7 +84,7 @@ const playMusic = (track, pause = false) => {
 
   document.querySelector('.songInfo').innerHTML = `<span class='scroll-text'>
   
-      ${decodeURI(track.split('.')[0]).split('_')[0].replaceAll('%2C', ',')}
+      ${decodeURI(track).split('_')[0].replaceAll('%2C', ',')}
 
     </span>`;
 

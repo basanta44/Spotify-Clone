@@ -19,7 +19,7 @@ const formatSeconds = (seconds) => {
 async function getSongs(folder) {
   currFolder = folder;
   let a = await fetch(
-    `${folder}/`
+    `Spotify-Clone/${folder}/`
   );
   let response = await a.text();
   let div = document.createElement('div');

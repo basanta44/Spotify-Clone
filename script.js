@@ -19,7 +19,7 @@ const formatSeconds = (seconds) => {
 async function getSongs(folder) {
   currFolder = folder;
   let a = await fetch(
-    `spotify-clone/${folder}/`
+    `/${folder}/`
   );
   let response = await a.text();
   let div = document.createElement('div');
@@ -100,7 +100,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
   let a = await fetch(
-    'spotify-clone/songs/'
+    '/songs/'
   );
   let response = await a.text();
   let div = document.createElement('div');
@@ -113,7 +113,7 @@ async function displayAlbums() {
     if (e.href.includes('/songs/')) {
       let folder = e.href.split('/').slice(-1)[0];
       let a = await fetch(
-        `spotify-clone/songs/${folder}/info.json`
+        `/songs/${folder}/info.json`
       );
       let response = await a.json();
       let cardContainer = document.querySelector('.cardContainer');
@@ -132,7 +132,7 @@ async function displayAlbums() {
 }
 
 async function main() {
-  await getSongs('spotify-clone/songs/Recovery');
+  await getSongs('/songs/Recovery');
 
   await displayAlbums();
 
@@ -195,7 +195,7 @@ async function main() {
 
   Array.from(document.getElementsByClassName('card')).forEach((e) => {
     e.addEventListener('click', async (item) => {
-      songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
+      songs = await getSongs(`/songs/${item.currentTarget.dataset.folder}`);
       playMusic(songs[0]);
     });
   });
